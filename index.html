@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/29/29600.png" type="image/png">
+    <title>Important CSS Properties</title>
+    
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+    #color {
+              color: whitesmoke;
+              text-shadow:
+                0 0 2.5px ,
+                0 0 1px #f02968,
+                0 0 2px #f02968,
+                0 0 3px #f02968,
+                0 0 4px #f02968,
+                0 0 5px #f02968;
+              font-family: 'Bruno Ace', sans-serif;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 15vh;
+              margin: 0;
+    }
+
+    body {
+        background-color:whitesmoke;
+        font-size: 50px;
+        letter-spacing: 3.5px
+    }
+
+    #size {
+              font-size: 2rem;
+              color: #fcf5fc;
+              text-shadow:
+                0 0 2.5px ,
+                0 0 5px #f02968,
+                0 0 10px #f02968,
+                0 0 15px #f02968,
+                0 0 20px #f02968,
+                0 0 25px #f02968;
+              font-family: 'Bruno Ace', sans-serif;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 12.5vh;
+              margin: 0;
+    }
+
+    #weight {
+              font-weight: 900;
+              color: #fcf5fc;
+              text-shadow:
+                0 0 2.5px ,
+                0 0 5px #f02968,
+                0 0 10px #f02968,
+                0 0 15px #f02968,
+                0 0 20px #f02968,
+                0 0 25px #f02968;
+              font-family: 'Bruno Ace', sans-serif;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 12.5vh;
+              margin: 0;
+    }
+
+    #family {
+                  color: #fcf5fc;
+                  text-shadow:
+                    0 0 2.5px ,
+                    0 0 5px #f02968,
+                    0 0 10px #f02968,
+                    0 0 15px #f02968,
+                    0 0 20px #f02968,
+                    0 0 25px #f02968;
+                  font-family: 'Caveat', cursive;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 13.5vh;
+                  margin: 0;
+    }
+
+    #align {
+              text-align: right;
+              padding-right: 20px;
+              color: #fcf5fc;
+              text-shadow:
+                0 0 2.5px ,
+                0 0 5px #f02968,
+                0 0 10px #f02968,
+                0 0 15px #f02968,
+                0 0 20px #f02968,
+                0 0 25px #f02968;
+              font-family: 'Bruno Ace', sans-serif;
+              height: 12.5vh;
+              margin: 0;
+    }
+
+    h5 {
+        color: #fcf5fc;
+                  text-shadow:
+                    0 0 2.5px ,
+                    0 0 5px #f02968,
+                    0 0 10px #f02968,
+                    0 0 15px #f02968,
+                    0 0 20px #f02968,
+                    0 0 25px #f02968;
+                    font-family: 'Bruno Ace', sans-serif;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 25vh;
+                  margin: 0;
+    }
+      
+
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+      <h5 id="title"></h5>
+      <p id="color"></p>
+      <p id="size"></p>
+      <p id="weight"></p>
+      <p id="family"></p>
+      <p id="align"></p>
+     
+       
+    <script>
+                window.onload = async function() {
+                    console.log("Página carregada");
+          
+                    var elements = [
+                        {id: 'title', text: 'Important CSS Properties'},
+                        {id: 'color', text: 'Color'},
+                        {id: 'size', text: 'Font Size'},
+                        {id: 'weight', text: 'Font Weight'},
+                        {id: 'family', text: 'Font Family'},
+                        {id: 'align', text: 'Text Align'},
+                    ];
+          
+                    function typeWriter(element, text) {
+                        return new Promise(resolve => {
+                            var i = 0;
+                            function typing() {
+                                if (i < text.length) {
+                                    element.innerHTML += text.charAt(i);
+                                    i++;
+                                    setTimeout(typing, 150);
+                                } else {
+                                    resolve();
+                                }
+                            }
+                            typing();
+                        });
+                    }
+          
+                    for (let el of elements) {
+                        var element = document.getElementById(el.id);
+                        if (element) {
+                            await typeWriter(element, el.text);
+                        } else {
+                            console.log(`Element with ID '${el.id}' not found.`);
+                        }
+                    }
+                }
+    </script>
+       
+
+  </body>
+
+</html>
